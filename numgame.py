@@ -66,7 +66,7 @@ def numGame():
         time.sleep(0.4)
         numGame()
 
-    else: 
+    else:
         print ("\nThanks for playing!")
         time.sleep(1.2)
 
