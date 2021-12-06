@@ -3,20 +3,28 @@ import time
 
 def numGame():
 
+    #obviously stated, but get user preferred highest possible guess.
     highest = int(input("What should be the highest possible number?\nPositive whole numbers only: "))
 
-    winner = random.randint(1, highest)
+    #Set a random winning number
+    winningNum = random.randint(1, highest)
+
+
     guess = int(input(f"\nEnter a number between 1 and {highest}.\nPositive whole numbers only: "))
 
-    while winner != guess:
 
-        if guess < winner:
+    while winningNum != guess:
+
+        #Guess less than set limit
+        if guess < winningNum:
             print("\nToo low, try again!")
             guess = int(input(f"Enter a number between 1 and {highest}.\nPositive whole numbers only: "))
 
+
+        #Guess greater than set limit, just had some fun here.
         elif guess > highest:
             time.sleep(1)
-
+            
             print("\n...")
             time.sleep(1.5)
 
@@ -45,7 +53,7 @@ def numGame():
                         time.sleep(1)
                         quit()
 
-            elif guess > winner:
+            elif guess > winningNum:
                 print("\nToo high, try again!")
                 guess = int(input(f"Enter a number between 1 and {highest}. \nPositive whole numbers only: "))
 
@@ -63,8 +71,3 @@ def numGame():
         time.sleep(1.2)
 
 numGame()
-
-
-
-
-
